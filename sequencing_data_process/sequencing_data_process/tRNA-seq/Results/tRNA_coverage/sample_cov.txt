@@ -1,0 +1,8 @@
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_Ctrl_1_R1.fq.gz.unpaired_uniq.bam	Ctrl	4618106
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_Ctrl_2_R1.fq.gz.unpaired_uniq.bam	Ctrl	8375416
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X1_1_R1.fq.gz.unpaired_uniq.bam	X1	1190648
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X1_2_R1.fq.gz.unpaired_uniq.bam	X1	2831533
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X2_1_R1.fq.gz.unpaired_uniq.bam	X2	3538775
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X2_2_R1.fq.gz.unpaired_uniq.bam	X2	3014580
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X4_1_R1.fq.gz.unpaired_uniq.bam	X4	5557780
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/skj/clean_X4_2_R1.fq.gz.unpaired_uniq.bam	X4	7378699
