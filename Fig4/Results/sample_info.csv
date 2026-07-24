@@ -1,0 +1,17 @@
+Name,Type,treatment,rep
+mR_Ctrl_1,RNA,Ctrl,rep1
+mR_Ctrl_2,RNA,Ctrl,rep2
+mR_XS1_1,RNA,XS1,rep1
+mR_XS1_2,RNA,XS1,rep2
+mR_XS2_1,RNA,XS2,rep1
+mR_XS2_2,RNA,XS2,rep2
+mR_XS4_1,RNA,XS4,rep1
+mR_XS4_2,RNA,XS4,rep2
+mono_Ctrl_1,RIBO,Ctrl,rep1
+mono_Ctrl_2,RIBO,Ctrl,rep2
+mono_XS1_1,RIBO,XS1,rep1
+mono_XS1_2,RIBO,XS1,rep2
+mono_XS2_1,RIBO,XS2,rep1
+mono_XS2_2,RIBO,XS2,rep2
+mono_XS4_1,RIBO,XS4,rep1
+mono_XS4_2,RIBO,XS4,rep2
