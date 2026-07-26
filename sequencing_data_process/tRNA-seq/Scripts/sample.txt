@@ -1,0 +1,8 @@
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_Ctrl_1_R1.fq.gz	Ctrl
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_Ctrl_2_R1.fq.gz	Ctrl
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X1_1_R1.fq.gz	X1
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X1_2_R1.fq.gz	X1
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X2_1_R1.fq.gz	X2
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X2_2_R1.fq.gz	X2
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X4_1_R1.fq.gz	X4
+/gpfs2/shankj/CodonUsage2/Ensembl/0Lib/01tRNA_seq/CleanData/clean_X4_2_R1.fq.gz	X4
