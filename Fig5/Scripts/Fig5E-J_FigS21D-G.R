@@ -44,7 +44,7 @@ ptA2 = ggplot(df_deltaASR, aes(y='RSCU', x = name, fill = log2(RSCU))) + geom_ti
     name = "RSCU (log2)" 
   ) + theme_pubr(legend = 'bottom') + labs(x=NULL, y=NULL) + theme(axis.text.x = element_blank(), axis.line.x = element_blank(),, axis.line.y = element_blank(), axis.ticks.x = element_blank())
 
-Fig4F = (ptA1/ptA_sig/ptA2) + plot_layout(heights = c(5,2,1))
+Fig5F = (ptA1/ptA_sig/ptA2) + plot_layout(heights = c(5,2,1))
 
 
 lc_line = function(slope_val, intercept_val, xmin, xmax) geom_segment(
@@ -62,7 +62,7 @@ lc_line = function(slope_val, intercept_val, xmin, xmax) geom_segment(
 
 lm_coeff_CR_m1A58 = broom::tidy(lm(tRNA_charging_rate ~ condition_int + m1A58_level, data = Codon_stats_extended))
 head(lm_coeff_CR_m1A58)
-Fig4E = ggplot(Codon_stats_extended, aes(y=tRNA_charging_rate, x = m1A58_level)) + geom_point(aes(colour = condition)) +
+Fig5E = ggplot(Codon_stats_extended, aes(y=tRNA_charging_rate, x = m1A58_level)) + geom_point(aes(colour = condition)) +
   theme_pubr(legend = 'right') + labs(y='tRNA charging rate', x='m1A58 level') +
   lc_line(lm_coeff_CR_m1A58%>%filter(term=='m1A58_level')%>%pull(estimate),
           lm_coeff_CR_m1A58%>%filter(term=='(Intercept)')%>%pull(estimate), 0, 0.5) +
@@ -76,7 +76,7 @@ Fig4E = ggplot(Codon_stats_extended, aes(y=tRNA_charging_rate, x = m1A58_level))
 
 ASR_lm_coeff = broom::tidy(lm(A_site_stalling_rate~condition_int+tRNA_charging_rate*m1A58_level + RSCU, data = Codon_stats_extended))
 ASR_lm_coeff %>% filter(term%in%c('tRNA_charging_rate','m1A58_level','tRNA_charging_rate:m1A58_level'))
-Fig4G = ggplot(Codon_stats_extended, aes(x=tRNA_charging_rate, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
+Fig5G = ggplot(Codon_stats_extended, aes(x=tRNA_charging_rate, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
   theme_pubr(legend = 'right') + labs(x='tRNA charging rate', y='A-site stalling rate') +
   lc_line(ASR_lm_coeff%>%filter(term=='tRNA_charging_rate')%>%pull(estimate), 
           ASR_lm_coeff%>%filter(term=='(Intercept)')%>%pull(estimate), 0.4, 0.9) +
@@ -87,7 +87,7 @@ Fig4G = ggplot(Codon_stats_extended, aes(x=tRNA_charging_rate, y = A_site_stalli
     "XS4"  = "#4088B4"),
     labels = c('Ctrl'='Ctrl','XS1'='S1','XS2'='S2','XS4'='S4')) + coord_cartesian(xlim = c(0.4,0.9), ylim = c(0,0.1))
 
-Fig4H = ggplot(Codon_stats_extended, aes(x=m1A58_level, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
+Fig5H = ggplot(Codon_stats_extended, aes(x=m1A58_level, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
   theme_pubr(legend = 'right') + labs(x='m1A58 level', y='A-site stalling rate') +
   lc_line(ASR_lm_coeff%>%filter(term=='m1A58_level')%>%pull(estimate),
           ASR_lm_coeff%>%filter(term=='(Intercept)')%>%pull(estimate), 0.1, 0.25) +
@@ -111,11 +111,11 @@ for(a in 1:3){
   for(b in 1:3) m[a,b] = coeff_dict['(Intercept)']+coeff_dict['tRNA_charging_rate']*charging_3value[a]+coeff_dict['m1A58_level']*m1A58_3value[b] + coeff_dict['tRNA_charging_rate:m1A58_level']*charging_3value[a]*m1A58_3value[b] + coeff_dict['condition_int']*condition_int_mean + coeff_dict['RSCU']*RSCU_mean
 }
 m = m[c(3,2,1),]
-Fig4I = Heatmap(m, cluster_rows = F, cluster_columns = F, row_names_side = 'left', column_names_rot = 0, column_names_centered = T,row_names_centered = T, heatmap_legend_param = list(title = 'Predicted stalling rate',direction = "horizontal",title_position = "topleft"), col = colorRampPalette(c("#2166ac", "white", "#b2182b"))(50))
+Fig5I = Heatmap(m, cluster_rows = F, cluster_columns = F, row_names_side = 'left', column_names_rot = 0, column_names_centered = T,row_names_centered = T, heatmap_legend_param = list(title = 'Predicted stalling rate',direction = "horizontal",title_position = "topleft"), col = colorRampPalette(c("#2166ac", "white", "#b2182b"))(50))
 
 ASR_lm_coeff_AA = broom::tidy(lm(A_site_stalling_rate~condition_int+tRNA_charging_rate*m1A58_level + RSCU + AA, data = Codon_stats_extended))
 ASR_lm_coeff_AA %>% filter(term%in%c('RSCU'))
-Fig4J = ggplot(Codon_stats_extended, aes(x=RSCU, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
+Fig5J = ggplot(Codon_stats_extended, aes(x=RSCU, y = A_site_stalling_rate)) + geom_point(aes(colour = condition)) +
   theme_pubr(legend = 'right') + labs(x='RSCU', y='A-site stalling rate') + 
   lc_line(ASR_lm_coeff_AA%>%filter(term=='RSCU')%>%pull(estimate), 
           ASR_lm_coeff_AA%>%filter(term=='(Intercept)')%>%pull(estimate), 0, 3) +
@@ -125,6 +125,8 @@ Fig4J = ggplot(Codon_stats_extended, aes(x=RSCU, y = A_site_stalling_rate)) + ge
     "XS2"  = "#9D71A6",
     "XS4"  = "#4088B4"),
     labels = c('Ctrl'='Ctrl','XS1'='S1','XS2'='S2','XS4'='S4')) + coord_cartesian(xlim = c(0,3), ylim = c(0,0.1))
+
+drop1(lm(A_site_stalling_rate~condition_int+tRNA_charging_rate*m1A58_level + RSCU + AA, data = Codon_stats_extended), test = "F")
 
 isodecoder_table = fread('Fig5/Results/isodecoder_chargingRate_m1A58.csv')
 isoacceptor_table = fread('Fig5/Results/isoacceptor_chargingRate_m1A58.csv')
@@ -182,12 +184,12 @@ FigS21G=ggplot(Codon_stats_extended, aes(y=tRNA_charging_rate, x = log2(A_site_t
     "XS4"  = "#4088B4"),
     labels = c('Ctrl'='Ctrl','XS1'='S1','XS2'='S2','XS4'='S4')) + coord_cartesian(ylim = c(0.3,1))
 
-Fig4E
-Fig4F
-Fig4G
-Fig4H
-draw(Fig4I,heatmap_legend_side = "top")
-Fig4J
+Fig5E
+Fig5F
+Fig5G
+Fig5H
+draw(Fig5I,heatmap_legend_side = "top")
+Fig5J
 
 FigS21D
 FigS21E
